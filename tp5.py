@@ -1,4 +1,6 @@
 # Ejercicio 1
+# Crear una lista con las notas de 10 estudiantes
+# Se muestra la lista completa
 notas = [9, 6, 7, 3, 10, 8, 8, 9, 7, 7]
 print("La lista de notas: ")
 for nota in notas:
@@ -7,9 +9,12 @@ suma = 0
 for nota in notas:
     suma += nota
 promedio = suma / len(notas)
-print(f"El promedio del curso es: {promedio}")
+print(f"El promedio del curso es: {promedio}") #Se muestra ek promedio del curso
+
+# Indica nota más alta y la más baja
 nota_alta = notas[0]
 nota_baja = notas[0]
+
 for nota in notas:
     if nota > nota_alta:
         nota_alta = nota
@@ -17,7 +22,10 @@ for nota in notas:
         nota_baja = nota
 print(f"La nota más alta es: {nota_alta}.")
 print(f"La nota más baja es: {nota_baja}.")
+
+
 # Ejercicio 2
+# Pedir al usuario que cargue 5 productos en una lista
 productos = []
 print("Ingresar 5 productos: ")
 for i in range(5):
