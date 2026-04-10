@@ -250,3 +250,54 @@ dia_maximo = ventas_por_dia.index(max(ventas_por_dia)) + 1
 print(f"El día con mayores ventas: {dia_maximo}, con un total: {max(ventas_por_dia)}.")
 producto_maximo = totales_productos.index(max(totales_productos)) + 1
 print(f"El producto más vendido: {producto_maximo}, con un total: {max(totales_productos)}")
+
+
+# Ejercicio 11
+# Crear una lista con los nombres de 10 estudiantes
+
+estudiantes = ["Ana", "Pedro", "Lucia", "Juan", "Marta", "Diego", "Elena", "Ramiro", "Sonia", "Marcos"]
+
+busqueda = input("Ingrese el nombre del estudiante a buscar: ")
+
+# Comparar sin errores de mayúsculas
+if busqueda.capitalize() in estudiantes:
+    posicion = estudiantes.index(busqueda.capitalize())
+    print(f"El nombre '{busqueda}' se encuentra en la posición {posicion}.")
+else:
+    print(f"El nombre '{busqueda}' no se encuentra en la lista.")
+
+
+# Ejercicio 12
+# Pedir al ususario que ingrese 8 números enteros y almacenarlos en una lista
+numeros = []
+for i in range(8):
+    num = int(input(f"Ingrese el número entero {i+1}: "))
+    numeros.append(num)
+
+print("--- Resultados ---")
+print(f"Lista original: {numeros}")
+
+# Investigando sorted(): devuelve una NUEVA lista sin modificar la original
+print(f"Ordenada de menor a mayor: {sorted(numeros)}")
+
+# Investigando reverse=True: invierte el orden del resultado
+print(f"Ordenada de mayor a menor: {sorted(numeros, reverse=True)}")
+
+
+# Ejercicio 13
+# Dada la siguiente lista de puntajes de un videojuego
+
+puntajes = [450, 1200, 875, 990, 300, 1500, 640]
+
+# Puntajes extremos
+print(f"Puntaje más alto: {max(puntajes)}")
+print(f"Puntaje más bajo: {min(puntajes)}")
+
+# Ranking (Mayor a menor)
+ranking = sorted(puntajes, reverse=True)
+print(f"Ranking: {ranking}")
+
+# Posición del puntaje 990
+# Sumamos 1 porque la indexación empieza en 0 (la posición 0 es el 1° lugar)
+posicion_990 = ranking.index(990) + 1
+print(f"El puntaje 990 se encuentra en la posición {posicion_990} del ranking.")
