@@ -9,7 +9,7 @@ suma = 0
 for nota in notas:
     suma += nota
 promedio = suma / len(notas)
-print(f"El promedio del curso es: {promedio}") #Se muestra ek promedio del curso
+print(f"El promedio del curso es: {promedio}") #Se muestra el promedio del curso
 
 # Indica nota más alta y la más baja
 nota_alta = notas[0]
