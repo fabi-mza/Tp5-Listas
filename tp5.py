@@ -44,34 +44,56 @@ else:
 print(f"Lista de productos actualizada: ")
 for p in productos:
     print(f"- {p}.")
+
+
 # Ejercicio 3
+# Generar una lista con 15 números enteros al azar entre 1 y 100
+
 import random
 num_azar = []
 for i in range(15):
     num_azar.append(random.randint(1, 100))
+
+# Listas par e impar
 par = []
 impar = []
 for num in num_azar:
     if num % 2 == 0:
         par.append(num)
     else:
-        impar. append(num)
+        impar.append(num)
+
+# Se muestra los números de cada listado        
 print(f"Lista original: {num_azar}")
 print(f"Cantidad de números pares: {len(par)}")
 print(f"El listado de números pares: {par}")
 print(f"Cantidad de números impares: {len(impar)}")
 print(f"El listado de números impares: {impar}")
+
+
 # Ejercicio 4
+# Dada una lista con valores repetidos:
+
 datos = [1, 3, 5, 3, 7, 1, 9, 5, 3]
+
+# Lista sin números repetidos
 sin_repetidos = []
 for num in datos:
     if num not in sin_repetidos:
         sin_repetidos.append(num)
+
+# Se muestra el resultado
 print(f"Listado original: {datos}")
 print(f"Listado sin números repetidos: {sin_repetidos}")
+
+
 # Ejercicio 5
+# Crear una lista con los nombres de 8 estudiantes presentes en clase
+
 estudiantes = ["Ana", "Juan", "Pedro", "Pablo", "Sofia", "Marta", "Mia", "Hugo"]
 print(f"Listado de estudiantes: {estudiantes}")
+
+# Elección del usuario
 accion = input("¿Desea agregar (A) o eliminar (E) algún alumno?: ").upper()
 if accion == "A":
     nuevo = input("Agrega el nombre del estudiante: ").capitalize()
@@ -86,14 +108,26 @@ elif accion == "E":
         print("El nombre no se encuentra en la lista.")
 else:
     print("Opción no válida.")
+
+# Se muestran listas actualizadas
 print(f"Lista final actualizada ({len(estudiantes)} alumnos): ")
 print(estudiantes)
+
+
 # Ejercicio 6
+# Dada un listado con 7 números, rotar todos los elementos una posición hacia la derecha
+
 numeros = [1, 2, 3, 4, 5, 6, 7]
 num_rotados = [numeros[-1]] + numeros[:-1]
+
+# Muestra resultados
 print(f"Listado original: {numeros}")
 print(f"Lista con números rotados: {num_rotados}")
+
+
 # Ejercicio 7
+# Crea una matriz de 7x2 con las temperaturas mínimas y máximas de una semana
+
 dias = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"]
 temperaturas = [
     [10, 30],
@@ -108,6 +142,7 @@ suma_min = 0
 suma_max = 0
 max_ampl = 0
 dia_max_ampl = ""
+
 for i in range(len(temperaturas)):
     temp_min = temperaturas[i][0]
     temp_max = temperaturas[i][1]
@@ -117,12 +152,19 @@ for i in range(len(temperaturas)):
     if ampl > max_ampl:
         max_ampl = ampl
         dia_max_ampl = dias[i]
+        
 prom_min = suma_min / len(temperaturas)
 prom_max = suma_max / len(temperaturas)
+
+# Se muestran resultados
 print(f"Promedio de temperaturas mínimas: {prom_min:.1f} °C")
 print(f"Promedio de temperaturas máximas: {prom_max:.1f} °C")
 print(f"El día que se registró mayor amplitud térmica es: {dia_max_ampl} con {max_ampl} °C")
+
+
 # Ejercicio 8
+# Crear una matriz con las notas de 5 estudiantes en 3 materias
+
 notas = [
     [7, 8, 9],
     [10, 7, 8],
@@ -145,7 +187,11 @@ for j in range(cant_materias):
         suma_materias += notas[i][j]
     prom_materias = suma_materias / cant_alumno
     print(f"{nombres_materias[j]}: {prom_materias:.2f}")
+
+
 # Ejercicio 9
+# Representar un tablero de Ta-te-ti como una lista 3x3
+
 tablero = [
     ["-", "-", "-"],
     ["-", "-", "-"],
@@ -171,9 +217,14 @@ while jugadas < 9:
         jugadas += 1
     else:
         print("¡Casillero ocupado! Intenta de nuevo.")
+        
 mostrar_tablero()
 print("Fin del juego.")
+
+
 # Ejercicio 10
+# Una tienda registra las ventas de 4 productos durante 7 dias, en una matriz de 4x7
+
 ventas = [
     [5, 20, 10, 15, 7, 25, 30],
     [35, 15, 5, 8, 20, 10, 10],
@@ -182,16 +233,19 @@ ventas = [
 ]
 totales_productos = []
 print("Total vendido por producto.")
+
 for i in range(len(ventas)):
     total_prod = sum(ventas[i])
     totales_productos.append(total_prod)
     print(f"Producto {i+1}: {total_prod} unidades.")
+    
 ventas_por_dia = []
 for dia in range(7):
     total_dia = 0
     for producto in range(4):
         total_dia += ventas[producto][dia]
     ventas_por_dia.append(total_dia)
+    
 dia_maximo = ventas_por_dia.index(max(ventas_por_dia)) + 1
 print(f"El día con mayores ventas: {dia_maximo}, con un total: {max(ventas_por_dia)}.")
 producto_maximo = totales_productos.index(max(totales_productos)) + 1
